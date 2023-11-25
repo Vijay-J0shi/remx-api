@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Remx</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', path='images/favicon.png') }}" />
+  <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="ui-outer-border">
+      <div class="ui-inner-alignment">
+        <b class="ui-name">RemX</b>
+        <h4 class="ui-api-label">An automated REM ( Random Encounter Model ) tool <br /> for animal abundance estimation
+          using
+          ML</h4>
+        <p class="ui-api-label">Model Version: {{modelVersion}}</p>
+        <p class="ui-api-label">AuthKey: Not Required</p>
+        <p class="ui-api-label">API: GraphQL</p>
+        <div class="ui-api-label">
+          <button class="ui-api-button ui-copy-btn" data-api={{endPoint}}>RemX API</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+<script>
+  console.log('Welcome to REMX!!!');
+
+  // why [0] even if only one element
+  // link: https://stackoverflow.com/a/32027957
+  const copyBtn = document.getElementsByClassName('ui-copy-btn')[0];
+
+  const onURLBtnClicked = (event) => {
+    const api_url = copyBtn.getAttribute('data-api');
+
+    // Copy to clipboard
+    navigator.clipboard.writeText(api_url)
+      .then(() => {
+        copyBtn.textContent = 'API Copied!!';
+        setTimeout(() => {
+          copyBtn.textContent = 'RemX API';
+        }, 1000);
+      })
+      .catch(err => {
+        console.error('Could not copy: ', err);
+      });
+  };
+
+  copyBtn.addEventListener('click', onURLBtnClicked);
+
+</script>
+
+</html>

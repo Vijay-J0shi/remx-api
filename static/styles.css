@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+html {
+  background-color: black;
+}
+
+.container {
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ui-name {
+  line-height: 1.5rem;
+  text-decoration: underline;
+  text-underline-offset: 0.4em;
+  font-size: 1.5em;
+  font-family: 'Rampart One', cursive;
+}
+
+.ui-outer-border {
+  border: 2px solid #98a6d4;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 1px 1px 1px 2px rgba(30, 200, 0, 0.3);
+}
+
+.ui-inner-alignment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #cdd1de;
+}
+
+.ui-api-label {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+}
+
+
+.ui-api-button {
+  /* border thickness */
+  --b: 3px;
+  /* size of the corner */
+  --s: .45em;
+
+  --color: #cdd1df;
+
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline-offset: .6em;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'Roboto Mono', monospace;
+  background-color: #0000;
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.ui-api-button:hover,
+.ui-api-button:focus-visible {
+  --_p: 4px;
+  cursor: pointer;
+}
