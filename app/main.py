@@ -3,13 +3,11 @@ from strawberry.fastapi import GraphQLRouter
 from fastapi.templating import Jinja2Templates
 
 from fastapi import FastAPI, Request
+from fastapi.staticfiles import StaticFiles
 from fastapi.openapi.docs import (
     get_redoc_html,
     get_swagger_ui_html,
-    get_swagger_ui_oauth2_redirect_html,
 )
-from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
 
 from app.model.model import __version__ as model_version
 from app.schema import Mutation, Query
@@ -45,7 +43,6 @@ async def home(request: Request):
             "modelVersion": model_version,
             "endPoint": "https://remx.server.com/api"
         })
-    # return {"message": "Welcome to Remx", "model_version": model_version}
 
 
 app.include_router(graphql_app, prefix="/api")

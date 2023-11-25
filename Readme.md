@@ -8,6 +8,12 @@
 
 [REMX API](https://github.com/Adam-Al-Rahman/remx-api) is an automated REM (Random Encounter Model) tool for animal abundance estimation using Machine Learning
 
+  <p>
+    <a href="https://github.com/Adam-Al-Rahman/remx-api" target="_blank">
+      <img width="100%" src="docs/assets/remx-api-page.png"></a>
+  </p>
+
+
 </div>
 
 <!-- TODO(Adam-Al-Rahman): Add the contributors sections -->
