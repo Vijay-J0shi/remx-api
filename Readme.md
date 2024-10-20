@@ -28,12 +28,7 @@
 
 REMX API offers two licensing options to accommodate diverse use cases:
 
-- **GPL-3.0 Licence**: This [OSI-approved](https://opensource.org/licenses/) open-source license is ideal for students and enthusiasts, promoting open collabaration and knowledge sharing. See the [GPL-3 License](https://github.com/Adam-Al-Rahman/remx-api/blob/main/LICENSE) file for more details.
+- **GPL-3.0 Licence**: This [OSI-approved](https://opensource.org/licenses/) open-source license is ideal for students and enthusiasts, promoting open collaboration and knowledge sharing. See the [GPL-3 License](https://github.com/Adam-Al-Rahman/remx-api/blob/main/LICENSE) file for more details.
 
-- **Enterprise License**: Designed for commercial use, this license permits the use of the REM API, bypassing the open-source requirements of GPL-3.0. If your scenario involves embedding our solutions into a commercial offering, reach out through [REMX API Licensing](). ⚠️
-
-```
-⚠️ Warning: Enterprise License is still in development. For commercial use email me `atiqurrehaman0@gmail.com`.
-```
 
 
