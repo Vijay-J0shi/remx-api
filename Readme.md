@@ -1,3 +1,10 @@
+### This project is Created by team of
+*Pranav T Selven*
+*Atiq Urrahman*
+*Vijay Joshi*
+*Sahil Goyal*
+
+
 <div align="center">
   <p>
     <a href="https://github.com/Adam-Al-Rahman/remx-api" target="_blank">
@@ -15,14 +22,6 @@
 
 
 </div>
-
-<!-- TODO(Adam-Al-Rahman): Add the contributors sections -->
-
-<!-- ## <div align="center">Contributors</div> -->
-
-<!-- TODO(Adam-Al-Rahman): Add the  References | Citations sections -->
-
-<!-- ## <div align="center">References | Citations </div> -->
 
 ## <div align="center">License</div>
 
