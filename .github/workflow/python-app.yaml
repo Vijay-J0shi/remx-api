@@ -2,9 +2,9 @@ name: REMX API
 
 on:
   push:
-    branches: [ "dev_rest_api" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "dev_rest_api" ]
+    branches: [ "main" ]
 
 permissions:
   contents: read
