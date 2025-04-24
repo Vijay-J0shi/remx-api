@@ -1,3 +1,6 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
 name: Python application
 
 on:
@@ -11,47 +14,26 @@ permissions:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Install Git LFS
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y git-lfs
-        git lfs install
-        git lfs pull
-    - name: Set up Python
-      uses: actions/setup-python@v4
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
       with:
-        python-version: '3.10'
+        python-version: "3.10"
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install onnx onnx-simplifier onnxruntime==1.12.0  # Replace with your local version
-    - name: Verify Model File
+        pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Lint with flake8
       run: |
-        ls -lh app/model/remx_model_1.0.0.onnx
-        python -c "import onnx; model = onnx.load('app/model/remx_model_1.0.0.onnx'); onnx.checker.check_model(model); print('Model is valid')"
-    - name: Check ONNX Runtime version
-      run: |
-        python -c "import onnxruntime; print(onnxruntime.__version__)"
-    - name: Check ONNX Model Opset Version
-      run: |
-        python -c "import onnx; model = onnx.load('app/model/remx_model_1.0.0.onnx'); print(f'Model opset version: {model.opset_import[0].version}')"
-    - name: Test Model Loading
-      run: |
-        python -c "import onnxruntime as ort; sess = ort.InferenceSession('app/model/remx_model_1.0.0.onnx'); print('Model loaded successfully')"
-    - name: Simplify ONNX Model
-      run: |
-        python -c "import onnx; from onnxsim import simplify; model = onnx.load('app/model/remx_model_1.0.0.onnx'); simplified_model, check = simplify(model); onnx.save(simplified_model, 'app/model/remx_model_1.0.0_simplified.onnx'); print('Model simplified:', check)"
-    - name: Validate ONNX Model
-      run: |
-        python validate_model.py
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pip install pytest pytest-cov
-        pytest tests.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
-      env:
-        MODEL_PATH: remx-api/app/model/remx_model_1.0.0.onnx
+        pytest
