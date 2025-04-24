@@ -14,6 +14,7 @@ __version__ = "1.0.0"
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent
 MODEL = f"{BASE_DIR}/remx_model_{__version__}.onnx"
+# MODEL=r"C:\Users\97597\Downloads\remx_model_1.0.0.onnx"
 
 
 def predict_images(content: UploadFile,
