@@ -1,5 +1,5 @@
 import numpy as np
-from strawberry.file_uploads import Upload
+from fastapi import  UploadFile
 
 from pathlib import Path
 from typing import Dict
@@ -16,7 +16,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent
 MODEL = f"{BASE_DIR}/remx_model_{__version__}.onnx"
 
 
-def predict_images(content: Upload,
+def predict_images(content: UploadFile,
                    image_name: str,
                    confidence: float = 0.5,
                    MODEL=MODEL) -> Dict:
