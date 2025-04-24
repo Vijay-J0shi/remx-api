@@ -1,14 +1,13 @@
 fastapi
-graphql-core
-strawberry-graphql
-# uvicorn
-# uvloop
+uvicorn
 numpy
 opencv-python-headless
 onnx
 onnxruntime
 Jinja2
-
+python-multipart
+httpx
+pytest
 
 
 
