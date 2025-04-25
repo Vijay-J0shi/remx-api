@@ -1,0 +1,22 @@
+
+name: Continuous Deployment
+
+on:
+  workflow_run:
+    workflows: ["Continuous Integration"]
+    types:
+      - completed
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - name: pull Docker image
+      run: sudo docker pull vijayj0shi/remx_api:latest
+    - name: Delete Old docker container
+      run: sudo docker rm -f remx_api-container || true
+    - name: Run Docker Container
+      run: sudo docker run -d -p 8080:8080 --name remx_api-container  vijayj0shi/remx_api
+
