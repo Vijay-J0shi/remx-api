@@ -7,6 +7,8 @@
 
 *Sahil Goyal*
 
+Api link - >http://ec2-13-49-46-41.eu-north-1.compute.amazonaws.com/docs#/Prediction/predict_images_from_upload_api_predict_upload_post
+
 
 <div align="center">
   <p>
