@@ -13,6 +13,11 @@ Api link - >http://ec2-13-49-46-41.eu-north-1.compute.amazonaws.com/docs
 Web Site LInk To test Api -> https://remx-web-flask.onrender.com
 </br></br>
 
+## Related Repository
+**Model Development Repo**-> https://github.com/Vijay-J0shi/remx_yolo
+**Flask Website Development Repo**-> https://github.com/Vijay-J0shi/Remx_Web_Flask
+**React Website Repo** (Developed By atiq and Adam) ->https://github.com/Vijay-J0shi/remx-website
+
 <div align="center">
   <p>
     <a href="https://github.com/Adam-Al-Rahman/remx-api" target="_blank">
