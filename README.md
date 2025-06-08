@@ -5,7 +5,10 @@
       <img width="100%" src="docs/assets/banner-remx.png"></a>
   </p>
 <div align="left">  
-  
+
+**Project Report** -> https://drive.google.com/file/d/1uf190dMKS53QddYgG-PH6x-7NyU5RKab/view?usp=drive_link
+
+
 ### This project is Created by team of
 *Pranav T Selven*
 
