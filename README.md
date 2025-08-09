@@ -21,7 +21,7 @@
 API link - >http://ec2-13-49-46-41.eu-north-1.compute.amazonaws.com/docs
 </br>
 </br>
-Web Site LInk To test Api -> https://remx-web-flask.onrender.com
+Website Link -> https://remx-web-flask.onrender.com
 </br></br>
 
 ## Related Repository
